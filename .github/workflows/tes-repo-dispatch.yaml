@@ -1,0 +1,23 @@
+name: Test Repo Deploy Action
+
+on:
+  repository_dispatch:
+    types:
+      - deploy
+
+
+jobs:
+  print_something:
+    runs-on: ubuntu-latest
+    name: Just print something
+    steps:
+      - name: Hello there!
+        run: echo "Hello there!"
+
+
+  print_payload:
+    runs-on: ubuntu-latest
+    name: Print Received payload
+    steps:
+      - name: Print Payload
+        run: echo "${{ github.event.client_payload }}"
