@@ -20,4 +20,4 @@ jobs:
     name: Print Received payload
     steps:
       - name: Print Payload
-        run: echo "${{ github.event.client_payload }}"
+        run: echo "${{ toJSON(github.event.client_payload) }}"
